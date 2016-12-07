@@ -3,6 +3,7 @@ til
 
 ### Setup send register email.
 ### Email-based self-registration
+### Course Enrolment methods 
 
 
 
@@ -33,3 +34,12 @@ til
     - Step2: Scroll down to Common settings box
       - Select email-based self-registration from the self registration drop-down menu
     - Step3: Click the 'Save changes' button
+    
+### Course Enrolment methods
+  - Methods: 
+      - Self enrolment = Free course 
+      - Enrolment key = access course with key
+      - Paypal enrolment
+  - Course settings
+    - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
+    - Click on the **eye** enrolments to open the **eye** icon
