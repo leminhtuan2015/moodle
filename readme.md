@@ -1,13 +1,39 @@
-til
-
-
+### Moodle site - basic structure
 ### Setup send register email.
 ### Email-based self-registration
 ### Course Enrolment methods 
 
-
-
 ---------------------------------------------------------------------------------
+### Moodle site - basic structure
+#### How does Moodle work?
+  - The Front page: 
+    - The Front page (Home page) of a Moodle site - the page you reach from your browser - usually includes information about the establishment itself and can be highly customised.
+    - **[Site Administration > Site Administration > Front page > Front page settings]**
+    
+  - Inside Moodle:
+    - Moodle's basic structure is organised around **courses**. => The heart of Moodle is **course**
+    - **Course:** where teachers can present their learning **resources** and **activities** to students
+      - **Courses** are organised into categories. Physics and Biology courses might come under the Science category for instance.
+      - **resources**: File, Folder, Pdf, Slide, Video...
+      - **activities**: Chat, Forums, Report...
+      
+    - **Blocks:** Teacher can offering extra features or information by adding **blocks**
+      - **Blocks**: are items which may be added to the left or right or centre column of any page in Moodle
+      - https://docs.moodle.org/32/en/Blocks
+      - **What are Moodle Blocks?**: https://www.youtube.com/watch?v=UKdXnRf8iH8&feature=youtu.be
+      
+    - **Enrol**: enrol on courses
+      - https://docs.moodle.org/32/en/Enrolments
+      - Enrolment, or 'enrollment', is the process of marking users as participants in the course
+      - How students enrol on courses depends on the establishment:
+        - they can self-enrol
+        - be enrolled manually by their teacher
+        - automatically by the admin
+        
+  - Teachers, students and other Moodle users
+    - You don't enter Moodle with the "teacher" or "student" role.
+    - Everyone who logs into Moodle has no special privileges until they are allocated roles by the administrator according to their needs in individual courses or contexts.
+
 
 ### Setup send register email. 
   - https://docs.moodle.org/32/en/Email_setup_gmail
