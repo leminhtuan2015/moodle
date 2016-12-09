@@ -1,4 +1,5 @@
 ### Moodle site - basic structure
+### Moodle Activities, Blocks
 ### Setup send register email.
 ### Email-based self-registration
 ### Course Enrolment methods 
@@ -33,6 +34,31 @@
   - Teachers, students and other Moodle users
     - You don't enter Moodle with the "teacher" or "student" role.
     - Everyone who logs into Moodle has no special privileges until they are allocated roles by the administrator according to their needs in individual courses or contexts.
+
+### Moodle Activities, Resources, Blocks
+
+#### Activities
+  - An activity is a general name for a group of features in a Moodle course
+  - Usually an activity is something that a student will do that interacts with other students and or the teacher
+  - There are 14 different types of activities in the standard Moodle
+    - Assignments
+    - Chat
+    - Choice
+    - Forum
+    - Lesson
+    - ............
+  
+#### Resources
+  - A resource is an item that a teacher can use to support learning, such as a file or link
+  - Teacher can add types of resource  to their courses.
+  - Resources type:
+    - Book - Multi-page resources with a book-like format. Teachers can export their Books as IMS CP (admin must allow teacher role to export IMS)
+    - File - A picture, a pdf document, a spreadsheet, a sound file, a video file
+    - Folder - For helping organize files and one folder may contain other folders
+    - IMS content package - Add static material from other sources in the standard IMS content package format
+    - Label - Can be a few displayed words or an image used to separate resources and activities in a topic section, or can be a lengthy description or instructions
+    - Page - The student sees a single, scrollable screen that a teacher creates with the robust HTML editor
+    - URL - You can send the student to any place they can reach on their web browser, for example Wikipedia
 
 
 ### Setup send register email. 
