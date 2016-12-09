@@ -42,8 +42,9 @@
   - Teachers can then add the content and re-organise them according to their own needs.
   - Adding a new course: **[Administration>Site Administration>Courses>Manage courses and categories]**
  
-##### Add students to a course (`Enrolment`)
+##### Add/Remove students to a course (`Enrolment`)
   - The process of adding students to courses is called **Enrolment**
+  - The process of adding students to courses is called **Unenrolment**
   
 ##### Course Enrolment methods
   - Methods: 
@@ -51,6 +52,7 @@
       - Enrolment key = access course with key
       - Paypal enrolment
       - Allowing guests into a course = Free
+      - Adding students in bulk
   - Course settings
     - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
     - Click on the **eye** enrolments to open the **eye** icon
@@ -59,6 +61,8 @@
   - https://docs.moodle.org/32/en/Bulk_enrolments
   - Bulk enrolments: Bulk enrolments allows you to enrol students and add them to groups in a Moodle course using an excel file containing the students' email address or userid
 
+##### Unenrolment
+  - https://docs.moodle.org/32/en/Unenrolment
 
 ### Moodle Activities, Resources, Blocks
 
