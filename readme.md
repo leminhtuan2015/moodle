@@ -1,4 +1,5 @@
 ### Moodle site - basic structure
+### Moodle Courses
 ### Moodle Activities, Blocks
 ### Setup send register email.
 ### Email-based self-registration
@@ -6,7 +7,7 @@
 
 ---------------------------------------------------------------------------------
 ### Moodle site - basic structure
-#### How does Moodle work?
+##### How does Moodle work?
   - The Front page: 
     - The Front page (Home page) of a Moodle site - the page you reach from your browser - usually includes information about the establishment itself and can be highly customised.
     - **[Site Administration > Site Administration > Front page > Front page settings]**
@@ -27,7 +28,7 @@
       - https://docs.moodle.org/32/en/Enrolments
       - Enrolment, or 'enrollment', is the process of marking users as participants in the course
       - How students enrol on courses depends on the establishment:
-        - they can self-enrol
+        - they can self-enrol (Free course)
         - be enrolled manually by their teacher
         - automatically by the admin
         
@@ -35,9 +36,33 @@
     - You don't enter Moodle with the "teacher" or "student" role.
     - Everyone who logs into Moodle has no special privileges until they are allocated roles by the administrator according to their needs in individual courses or contexts.
 
+### Moodle Courses
+  - Courses are the spaces on Moodle where teachers add learning materials and activities for their students
+  - Courses may be created by **admins**, **course creators** or **managers**.
+  - Teachers can then add the content and re-organise them according to their own needs.
+  - Adding a new course: **[Administration>Site Administration>Courses>Manage courses and categories]**
+ 
+##### Add students to a course (`Enrolment`)
+  - The process of adding students to courses is called **Enrolment**
+  
+##### Course Enrolment methods
+  - Methods: 
+      - Self enrolment = Free course 
+      - Enrolment key = access course with key
+      - Paypal enrolment
+      - Allowing guests into a course = Free
+  - Course settings
+    - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
+    - Click on the **eye** enrolments to open the **eye** icon
+    
+##### Enrol several students at once
+  - https://docs.moodle.org/32/en/Bulk_enrolments
+  - Bulk enrolments: Bulk enrolments allows you to enrol students and add them to groups in a Moodle course using an excel file containing the students' email address or userid
+
+
 ### Moodle Activities, Resources, Blocks
 
-#### Activities
+##### Activities
   - An activity is a general name for a group of features in a Moodle course
   - Usually an activity is something that a student will do that interacts with other students and or the teacher
   - There are 14 different types of activities in the standard Moodle
@@ -48,7 +73,7 @@
     - Lesson
     - ............
   
-#### Resources
+##### Resources
   - A resource is an item that a teacher can use to support learning, such as a file or link
   - Teacher can add types of resource  to their courses.
   - Resources type:
@@ -60,7 +85,7 @@
     - Page - The student sees a single, scrollable screen that a teacher creates with the robust HTML editor
     - URL - You can send the student to any place they can reach on their web browser, for example Wikipedia
 
-#### Blocks
+##### Blocks
   - https://docs.moodle.org/32/en/Blocks
   - Blocks are items which may be added to the left or right or centre column of any page in Moodle
 
@@ -91,11 +116,4 @@
       - Select email-based self-registration from the self registration drop-down menu
     - Step3: Click the 'Save changes' button
     
-### Course Enrolment methods
-  - Methods: 
-      - Self enrolment = Free course 
-      - Enrolment key = access course with key
-      - Paypal enrolment
-  - Course settings
-    - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
-    - Click on the **eye** enrolments to open the **eye** icon
+
