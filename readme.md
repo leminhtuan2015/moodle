@@ -60,6 +60,10 @@
     - Page - The student sees a single, scrollable screen that a teacher creates with the robust HTML editor
     - URL - You can send the student to any place they can reach on their web browser, for example Wikipedia
 
+#### Blocks
+  - https://docs.moodle.org/32/en/Blocks
+  - Blocks are items which may be added to the left or right or centre column of any page in Moodle
+
 
 ### Setup send register email. 
   - https://docs.moodle.org/32/en/Email_setup_gmail
