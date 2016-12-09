@@ -1,6 +1,7 @@
 ### Moodle site - basic structure
 ### Moodle Courses
 ### Moodle Activities, Blocks
+### Moodle Users
 ### Setup send register email.
 ### Email-based self-registration
 ### Course Enrolment methods 
@@ -93,6 +94,9 @@
   - https://docs.moodle.org/32/en/Blocks
   - Blocks are items which may be added to the left or right or centre column of any page in Moodle
 
+### Moodle Users
+##### Creating a group of users
+  - **[Administration > Course administration > Users > Groups]** 
 
 ### Setup send register email. 
   - https://docs.moodle.org/32/en/Email_setup_gmail
