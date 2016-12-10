@@ -4,8 +4,8 @@
 ### Moodle Users
 ### Setup send register email.
 ### Email-based self-registration
-### Course Enrolment methods 
-
+### Course Enrolment methods
+### Create a new theme.
 ---------------------------------------------------------------------------------
 ### Moodle site - basic structure
 ##### How does Moodle work?
