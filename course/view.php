@@ -35,7 +35,11 @@
     $urlparams = array('id' => $course->id);
 
     // Sectionid should get priority over section number
+
+    error_log(print_r($sectionid, true));
+
     if ($sectionid) {
+        error_log(print_r("pppppp", true));
         $section = $DB->get_field('course_sections', 'section', array('id' => $sectionid, 'course' => $course->id), MUST_EXIST);
     }
     if ($section) {
@@ -96,6 +100,7 @@
     $PAGE->set_pagelayout('course');
 
     if ($section and $section > 0) {
+        error_log(print_r("fvdsbv", true));
 
         // Get section details and check it exists.
         $modinfo = get_fast_modinfo($course);
