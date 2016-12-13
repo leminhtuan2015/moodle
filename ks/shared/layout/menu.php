@@ -45,7 +45,7 @@ function tree(&$courseCategory) {
             </ul>
         </li>
 
-        <li> <a href="../course">Courses</a>
+        <li> <a href="../course">Category</a>
             <?php
             tree($courseCategoryRoot);
             ?>

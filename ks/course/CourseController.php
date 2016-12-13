@@ -13,10 +13,14 @@ class CourseController {
     public function index($categoryid="all"){
         $course = new Course();
         $courses = $course->getByCategory($categoryid);
-//
 //      error_log(print_r($c, true));
-
         require_once(__DIR__.'/views/index.php');
+    }
+
+    public function show($id){
+        $course = new Course();
+        $c = $course->get($id);
+        require_once(__DIR__.'/views/show.php');
     }
 
 }

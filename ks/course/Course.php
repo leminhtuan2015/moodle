@@ -15,18 +15,23 @@ class Course {
 
     public function all(){
         $courses = get_courses();
-
 //        error_log(print_r("rggtg:hhhh ----------()", true));
-
         return $courses;
     }
 
     public function getByCategory($categoryid){
         $courses = get_courses($categoryid);
-
 //        error_log(print_r("rggtg:hhhh ----------()", true));
-
         return $courses;
+    }
+
+    public function get($id){
+        global $DB;
+        $params = array('id' => $id);
+
+        $course = $DB->get_record('course', $params, '*', MUST_EXIST);
+        error_log(print_r($course, true));
+        return $course;
     }
 
 }
