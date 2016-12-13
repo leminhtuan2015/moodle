@@ -57,8 +57,13 @@ $PAGE->set_heading($site->fullname);
 $content = $courserenderer->course_category($categoryid);
 
 echo $OUTPUT->header();
+
+//error_log(print_r("rggtg:hhhh ----------()", true));
+//error_log(print_r($OUTPUT->header(), true));
 echo $OUTPUT->skip_link_target();
 echo $content;
+
+
 
 // Trigger event, course category viewed.
 $eventparams = array('context' => $PAGE->context, 'objectid' => $categoryid);
