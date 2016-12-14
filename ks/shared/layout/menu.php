@@ -55,7 +55,7 @@ function tree(&$courseCategory) {
                             <?php tree($courseCategoryRoot) ?>
                         </ul>
                     </li>
-                    <li><a href="">Portfolio</a></li>
+                    <li><a href="../user">My Data</a></li>
                     <li class="parent">
                         <a href="">More</a>
                         <ul class="sub-menu">
