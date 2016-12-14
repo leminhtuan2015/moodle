@@ -2,7 +2,7 @@
 ### Moodle Courses
 ### Moodle Activities, Blocks
 ### Moodle Users
-### Setup send register email.
+### Setup Mail server for sending register email
 ### Email-based self-registration
 ### Course Enrolment methods
 ### Create a new theme.
@@ -98,7 +98,8 @@
 ##### Creating a group of users
   - **[Administration > Course administration > Users > Groups]** 
 
-### Setup send register email. 
+### Setup Mail server for sending register email
+- DashboardSite -> administration -> Server -> Email -> Outgoing mail configuration
   - https://docs.moodle.org/32/en/Email_setup_gmail
   
   - GMail SMTP with Moodle
