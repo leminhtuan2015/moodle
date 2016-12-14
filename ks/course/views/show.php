@@ -36,6 +36,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
                 <?php
                     foreach ($sections as $section) {
                         echo "<li> $section->name ($section->id)</li>";
+
+                        foreach ($section->modinfo->cms as $cms) {
+                            if($cms->section == $section->id){
+                                if($cms->content){
+                                    echo "<p> $cms->content</p>";
+                                }
+                            }
+                        }
                     }
                 ?>
             </div>
@@ -56,7 +64,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
                             }
 
                             if($cms->content){
-                                echo "<ul><li> $cms->content<li></ul>";
+                                echo "<p> $cms->content</p>";
                             }
                         }
                     }
