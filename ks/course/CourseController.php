@@ -16,13 +16,15 @@ require_once("../application/ApplicationController.php");
 
 class CourseController extends ApplicationController {
     public function index($categoryid="all") {
-        parent::index();
+        parent::menu();
 
         $courses = get_courses($categoryid);
         require_once(__DIR__.'/views/index.php');
     }
 
     public function show($id) {
+        parent::menu();
+
         global $DB;
 
         $params = array('id' => $id);
@@ -34,12 +36,33 @@ class CourseController extends ApplicationController {
         $modnamesused = $modinfo->get_used_module_names();
         $mods = $modinfo->get_cms();
         $sections = $modinfo->get_section_info_all();
+        $enrolledUsers = $this->enrolledUsers($course->id);
 
-//        error_log(print_r($sections, true));
+        error_log(print_r($enrolledUsers, true));
 
         require_login();
 
         require_once(__DIR__.'/views/show.php');
+    }
+
+    public function myCourses(){
+        parent::menu();
+
+        global $USER;
+
+        $mycourses = enrol_get_all_users_courses($USER->id, true, null, 'visible DESC, sortorder ASC');
+
+//        error_log(print_r($mycourses, true));
+
+        require_once(__DIR__.'/views/myCourse.php');
+    }
+
+    private function enrolledUsers($courseId){
+        $context = context_COURSE::instance($courseId);
+
+        $enrolledUsers = get_enrolled_users($context, 'mod/assignment:submit');
+
+        return $enrolledUsers;
     }
 
 }

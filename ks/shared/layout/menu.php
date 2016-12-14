@@ -46,6 +46,7 @@ function tree(&$courseCategory) {
             <nav id="navigation">
                 <ul id="main-menu">
                     <li class="current-menu-item"><a href="../../ks/home/">Home</a></li>
+                    <li class="menu-item"><a href="../../ks/course/?action=myCourses">My Courses</a></li>
                     <li class="parent">
                         <a href="">Category</a>
                         <ul class="sub-menu">

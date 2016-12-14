@@ -23,5 +23,7 @@ if($action == "index"){
 } else if($action == "show"){
     $id = $_GET['id'];
     $controller->show($id);
+} else if($action == "myCourses"){
+    $controller->myCourses();
 }
 ?>

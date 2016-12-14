@@ -1,19 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: leminhtuan
- * Date: 12/13/16
- * Time: 2:00 PM
- */
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
-
-
-//error_log(print_r($sections, true));
-
-?>
-
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,46 +14,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
             <h2>Course: <?php echo $course->fullname ?> </h2>
 
             <ul class="w3-navbar w3-black">
-                <li><a href="javascript:void(0)" id="host" class="tablink" onclick="openCity(event, 'London');">Sections</a></li>
-                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Paris');">Activities</a></li>
-                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Tokyo');">Documents</a></li>
+                <li><a href="javascript:void(0)" id="host" class="tablink" onclick="openCity(event, 'Sections');">Sections</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Activities');">Activities</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Documents');">Documents</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Chat');">Chat</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Posts');">Posts</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Members');">Members</a></li>
             </ul>
 
-            <div id="London" class="w3-container w3-border city">
+            <div id="Sections" class="w3-container w3-border city">
 
-                <div class="">
+                <div style="margin-top: 20px">
                     <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1">Collapsible 1</a>
-                                </h4>
-                            </div>
-
-                            <div id="collapse1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse2">Collapsible 1</a>
-                                </h4>
-                            </div>
-
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body
-                                </div>
-                            </div>
-
-                        </div>
-
-
                         <?php foreach ($sections as $section) { ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -89,7 +45,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
                                                     }
 
                                                     if ($cms->url) {
-                                                        echo "<a href='$cms->url' > - $cms->name </a> ($cms->section)";
+                                                        echo "<li><a href='$cms->url' > - $cms->name </a> ($cms->section)</li>";
                                                     }
                                                 }
                                             }
@@ -103,12 +59,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
                 </div>
             </div>
 
-            <div id="Paris" class="w3-container w3-border city">
+            <div id="Activities" class="w3-container w3-border city">
                 <?php
-                    error_log(print_r($sections, true));
+//                    error_log(print_r($sections, true));
 
                     echo "<ul>";
-                    foreach ($sections as $section) {
+//                    foreach ($sections as $section) {
+                        $section = $sections[0];
+
                         echo "<li><h3>$section->name ($section->id)</h3></li>";
 
                         foreach ($section->modinfo->cms as $cms) {
@@ -123,14 +81,32 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
                                 }
                             }
                         }
-                    }
+//                    }
                     echo "</ul>";
                 ?>
             </div>
 
-            <div id="Tokyo" class="w3-container w3-border city">
-                <h2>Tokyo</h2>
+            <div id="Documents" class="w3-container w3-border city">
+                <h2>Documents</h2>
                 <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Chat" class="w3-container w3-border city">
+                <h2>Chat</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Posts" class="w3-container w3-border city">
+                <h2>Posts</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Members" class="w3-container w3-border city">
+                <?php
+                    foreach ($enrolledUsers as $enrolledUser) {
+                        echo "<li> <a href=../../user/profile.php?id=$enrolledUser->id>$enrolledUser->username ($enrolledUser->email)</a></li>";
+                    }
+                ?>
             </div>
         </div>
     </div>

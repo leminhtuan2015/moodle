@@ -7,8 +7,9 @@
  * Time: 8:26 AM
  */
 class ApplicationController {
-    public function index(){
+    public function menu(){
         require_once($_SERVER['DOCUMENT_ROOT']."/moodle/ks/application/views/index.php");
     }
+
 
 }
