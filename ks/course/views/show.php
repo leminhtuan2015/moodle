@@ -27,7 +27,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
             <h2>Course: <?php echo $course->fullname ?> </h2>
 
             <ul class="w3-navbar w3-black">
-                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'London');">Sections</a></li>
+                <li><a href="javascript:void(0)" id="host" class="tablink" onclick="openCity(event, 'London');">Sections</a></li>
                 <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Paris');">Activities</a></li>
                 <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Tokyo');">Documents</a></li>
             </ul>
@@ -50,7 +50,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
 
                     foreach ($section->modinfo->cms as $cms) {
                         if($cms->section == $section->id){
-                            echo "<ul><li> - $cms->name ($cms->section)<li></ul>";
+
+                            if($cms->url){
+                                echo "<ul><li> <a href='$cms->url' > - $cms->name </a> ($cms->section)<li></ul>";
+                            }
+
+                            if($cms->content){
+                                echo "<ul><li> $cms->content<li></ul>";
+                            }
                         }
                     }
                 }
@@ -72,15 +79,21 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
     function openCity(evt, cityName) {
         var i, x, tablinks;
         x = document.getElementsByClassName("city");
+
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
+
         tablinks = document.getElementsByClassName("tablink");
+
         for (i = 0; i < x.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
         }
+
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " w3-red";
     }
+
+    document.getElementById('host').click();
 </script>
 
