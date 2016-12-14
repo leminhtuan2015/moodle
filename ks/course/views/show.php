@@ -13,104 +13,74 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
 
 ?>
 
+
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+    .city {display:none;}
+</style>
+<body>
+
 <div align="center">
-    <div align="center" style="width:960px; margin-top: 20px">
-        <?php echo "Course name:  $course->fullname"; ?>
+    <div style="width:960px; margin-top: 20px">
+        <div class="w3-container" align="left">
+            <h2>Course: <?php echo $course->fullname ?> </h2>
+
+            <ul class="w3-navbar w3-black">
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'London');">Sections</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Paris');">Activities</a></li>
+                <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Tokyo');">Documents</a></li>
+            </ul>
+
+            <div id="London" class="w3-container w3-border city">
+                <?php
+                    foreach ($sections as $section) {
+                        echo "<li> $section->name ($section->id)</li>";
+                    }
+                ?>
+            </div>
+
+            <div id="Paris" class="w3-container w3-border city">
+                <?php
+                error_log(print_r($sections, true));
+
+                echo "<ul>";
+                foreach ($sections as $section) {
+                    echo "<li><h3>$section->name ($section->id)</h3></li>";
+
+                    foreach ($section->modinfo->cms as $cms) {
+                        if($cms->section == $section->id){
+                            echo "<ul><li> - $cms->name ($cms->section)<li></ul>";
+                        }
+                    }
+                }
+                echo "</ul>";
+                ?>
+            </div>
+
+            <div id="Tokyo" class="w3-container w3-border city">
+                <h2>Tokyo</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+        </div>
     </div>
-
-    <!--    TAB BAR-->
-    <div align="center" style="width:960px; margin-top: 20px">
-        <ul class="tab">
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">Course</a></li>
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Activities</a></li>
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Members</a></li>
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Post</a></li>
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Chat Group</a></li>
-            <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Issues</a></li>
-        </ul>
-
-        <div id="London" class="tabcontent">
-            <h3>Course</h3>
-            <p>London is the capital city of England.</p>
-        </div>
-
-        <div id="Paris" class="tabcontent">
-            <h3>Activities</h3>
-            <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-            <h3>Members</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>
-
-    </div>
-
 </div>
 
 
-<style>
-    body {font-family: "Lato", sans-serif;}
-
-    ul.tab {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-    }
-
-    /* Float the list items side by side */
-    ul.tab li {float: left;}
-
-    /* Style the links inside the list items */
-    ul.tab li a {
-        display: inline-block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-
-    /* Change background color of links on hover */
-    ul.tab li a:hover {
-        background-color: #ddd;
-    }
-
-    /* Create an active/current tablink class */
-    ul.tab li a:focus, .active {
-        background-color: #ccc;
-    }
-
-    /* Style the tab content */
-    .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
-        border-top: none;
-    }
-</style>
 
 <script>
     function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        var i, x, tablinks;
+        x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
         }
         document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
+        evt.currentTarget.className += " w3-red";
     }
 </script>
-
-
-
-
 

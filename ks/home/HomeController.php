@@ -6,8 +6,12 @@
  * Time: 2:10 PM
  */
 
-class HomeController {
+require_once("../application/ApplicationController.php");
+
+class HomeController extends ApplicationController {
     public function index(){
+        parent::index();
+
         require_once(__DIR__.'/views/index.php');
     }
 

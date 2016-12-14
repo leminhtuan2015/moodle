@@ -12,11 +12,13 @@ global $CFG;
 require_once("../../config.php");
 require_once($CFG->dirroot. '/course/lib.php');
 require_once($CFG->libdir. '/coursecatlib.php');
+require_once("../application/ApplicationController.php");
 
-class CourseController {
+class CourseController extends ApplicationController {
     public function index($categoryid="all") {
+        parent::index();
+
         $courses = get_courses($categoryid);
-//      error_log(print_r($c, true));
         require_once(__DIR__.'/views/index.php');
     }
 
@@ -33,10 +35,7 @@ class CourseController {
         $mods = $modinfo->get_cms();
         $sections = $modinfo->get_section_info_all();
 
-        error_log(print_r($sections, true));
-
-        error_log(print_r($sections[1]->name, true));
-        error_log(print_r($sections[1]->content, true));
+//        error_log(print_r($sections, true));
 
         require_login();
 

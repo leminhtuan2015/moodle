@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<div align="center" style="margin-top: 20px">
+
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
-
-echo "COURSES";
-echo "<hr>";
-
 foreach ($courses as $c) {
-    echo "<li><a href='../course/?action=show&id=$c->id'>$c->fullname</a></li>";
+    echo "<h3><li><a href='../course/?action=show&id=$c->id'>$c->fullname</a></li></h3>";
 }
+?>
+
+</div>
