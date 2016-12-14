@@ -14,8 +14,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
 ?>
 
 
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
 <style>
     .city {display:none;}
 </style>
@@ -33,43 +36,95 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/moodle/ks/shared/layout/menu.php');
             </ul>
 
             <div id="London" class="w3-container w3-border city">
+
+                <div class="">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse1">Collapsible 1</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse2">Collapsible 1</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body Panel Body
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <?php foreach ($sections as $section) { ?>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#<?php echo "$section->id" ?>"><?php echo "$section->name ($section->id)"?></a>
+                                    </h4>
+                                </div>
+
+
+                                <div id="<?php echo "$section->id" ?>" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <?php
+                                            foreach ($section->modinfo->cms as $cms) {
+                                                if ($cms->section == $section->id) {
+                                                    if ($cms->content) {
+                                                        echo "$cms->content";
+                                                    }
+
+                                                    if ($cms->url) {
+                                                        echo "<a href='$cms->url' > - $cms->name </a> ($cms->section)";
+                                                    }
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="Paris" class="w3-container w3-border city">
                 <?php
+                    error_log(print_r($sections, true));
+
+                    echo "<ul>";
                     foreach ($sections as $section) {
-                        echo "<li> $section->name ($section->id)</li>";
+                        echo "<li><h3>$section->name ($section->id)</h3></li>";
 
                         foreach ($section->modinfo->cms as $cms) {
                             if($cms->section == $section->id){
+
+                                if($cms->url){
+                                    echo "<ul><li> <a href='$cms->url' > - $cms->name </a> ($cms->section)<li></ul>";
+                                }
+
                                 if($cms->content){
                                     echo "<p> $cms->content</p>";
                                 }
                             }
                         }
                     }
-                ?>
-            </div>
-
-            <div id="Paris" class="w3-container w3-border city">
-                <?php
-                error_log(print_r($sections, true));
-
-                echo "<ul>";
-                foreach ($sections as $section) {
-                    echo "<li><h3>$section->name ($section->id)</h3></li>";
-
-                    foreach ($section->modinfo->cms as $cms) {
-                        if($cms->section == $section->id){
-
-                            if($cms->url){
-                                echo "<ul><li> <a href='$cms->url' > - $cms->name </a> ($cms->section)<li></ul>";
-                            }
-
-                            if($cms->content){
-                                echo "<p> $cms->content</p>";
-                            }
-                        }
-                    }
-                }
-                echo "</ul>";
+                    echo "</ul>";
                 ?>
             </div>
 
