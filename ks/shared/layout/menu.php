@@ -65,7 +65,7 @@ function tree(&$courseCategory) {
                             <?php if(isloggedin()) { ?>
                                 <li><a href="../../login/logout.php"><i class="icon-angle-right"></i>Logout</a></li>
                             <?php } else { ?>
-                                <li><a href=""><i class="icon-angle-left"></i>Login</a></li>
+                                <li><a href="../../login/index.php"><i class="icon-angle-left"></i>Login</a></li>
                             <?php }?>
 
                             <li>

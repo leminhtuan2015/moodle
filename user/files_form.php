@@ -41,6 +41,9 @@ class user_files_form extends moodleform {
         $mform = $this->_form;
 
         $data = $this->_customdata['data'];
+
+        error_log(print_r($data, true));
+
         $options = $this->_customdata['options'];
 
         $mform->addElement('filemanager', 'files_filemanager', get_string('files'), null, $options);

@@ -67,6 +67,7 @@ class block_private_files extends block_base {
             }
 
         }
+
         return $this->content;
     }
 }

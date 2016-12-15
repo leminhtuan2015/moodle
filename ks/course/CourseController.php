@@ -38,7 +38,7 @@ class CourseController extends ApplicationController {
         $sections = $modinfo->get_section_info_all();
         $enrolledUsers = $this->enrolledUsers($course->id);
 
-        error_log(print_r($enrolledUsers, true));
+//        error_log(print_r($enrolledUsers, true));
 
         require_login();
 
