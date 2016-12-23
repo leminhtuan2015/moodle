@@ -6,6 +6,8 @@
 ### Email-based self-registration
 ### Course Enrolment methods
 ### Create a new theme.
+
+### Course -> Section -> Module (Resources + Activities of Course)
 ---------------------------------------------------------------------------------
 ### Moodle site - basic structure
 ##### How does Moodle work?
@@ -125,4 +127,8 @@
       - Select email-based self-registration from the self registration drop-down menu
     - Step3: Click the 'Save changes' button
     
+### Course -> Section -> Module (Resources + Activities of Course)
+
+- One **Course** can be have many **Section** => Course relate with Section by **ks_course_modules** table
+- One **Section** can be have many **Resources/Activities (Modules)** => Course relate Section relate Modules by **ks_course_modules** table
 
