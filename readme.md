@@ -128,7 +128,15 @@
     - Step3: Click the 'Save changes' button
     
 ### Course -> Section -> Module (Resources + Activities of Course)
+- **Modules** in Moodle is the type of resource such as **Mp4, File, Book, Lable, Page, Forum, Lesson...22**
+- **Module** = Resource + Activity
+- Moodle have all 22 type of modules. (lay in table **ks_modules**)
 
 - One **Course** can be have many **Section** => Course relate with Section by **ks_course_modules** table
 - One **Section** can be have many **Resources/Activities (Modules)** => Course relate Section relate Modules by **ks_course_modules** table
+
+- DATABASE:
+  - **ks_course_sections** : Each **Section** in a **Course** is stored in this table, the id of **ks_course_sections** is the id of **Section**
+  
+  - **ks_course_modules** : course->section->module
 
