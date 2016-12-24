@@ -150,4 +150,30 @@
   - **ks_course_sections** : Each **Section** in a **Course** is stored in this table, the id of **ks_course_sections** is the id of **Section**
   
   - **ks_course_modules** : course->section->module
+  
+- Get all infomation of a course (section, modules of each section)
+
+```php
+        $params = array('id' => $courseId);
+        $course = $DB->get_record('course', $params, '*', MUST_EXIST);
+
+        $modinfo = get_fast_modinfo($course);
+        $modnames = get_module_types_names();
+        $modnamesplural = get_module_types_names(true);
+        $modnamesused = $modinfo->get_used_module_names();
+        $mods = $modinfo->get_cms();
+        $sections = $modinfo->get_section_info_all();
+
+        Logger::log($sections);
+
+//      sections[i] -> [section_info(id, name, section)] -> modinfo -> (course, userid, sections[], cms[cm_info], instances[forum, lable[cm_info]])
+
+//      NOTICE: cms[cm_info], array cms[] contain list of cm_info, cm_info contain all infomation about Section + Module of this section
+
+//      cm_info->id = the id of this module
+//      cm_info->section = the id of section
+//      cm_info->modname = name of module in this section
+//      cm_info->content  = the content of module (content of lable)
+
+```
 
