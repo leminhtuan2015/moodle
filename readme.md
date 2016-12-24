@@ -7,7 +7,11 @@
 ### Course Enrolment methods
 ### Create a new theme.
 
+### DATABASES
 ### Course -> Section -> Module (Resources + Activities of Course)
+
+
+
 ---------------------------------------------------------------------------------
 ### Moodle site - basic structure
 ##### How does Moodle work?
@@ -126,6 +130,13 @@
     - Step2: Scroll down to Common settings box
       - Select email-based self-registration from the self registration drop-down menu
     - Step3: Click the 'Save changes' button
+    
+    
+### DATABASES
+  - ks_course_categories
+  - ks_course_sections
+  - ks_course_modules
+  - ks_modules
     
 ### Course -> Section -> Module (Resources + Activities of Course)
 - **Modules** in Moodle is the type of resource such as **Mp4, File, Book, Lable, Page, Forum, Lesson...22**
