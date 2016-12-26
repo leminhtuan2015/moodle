@@ -60,9 +60,16 @@
       - Paypal enrolment
       - Allowing guests into a course = Free
       - Adding students in bulk
-  - Course settings
+##### Course enrollment settings
     - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
     - Click on the **eye** enrolments to open the **eye** icon
+    
+    Method 2:
+      - [In A course] -> [Select more setting] -> [click on tab Users] -> [click on Enrolment methods] -> in this page we can make [Self Enrollment Or add user to a course manual]
+      - EX: http://localhost/moodle/enrol/instances.php?id=55
+     
+##### Manual enrol multiple users
+  - [Site admin] -> [click on tab Courses] -> [Manage courses and categories] -> [click on any course] -> [click Enrolled users]
     
 ##### Enrol several students at once
   - https://docs.moodle.org/32/en/Bulk_enrolments
