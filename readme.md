@@ -61,10 +61,20 @@
       - Allowing guests into a course = Free
       - Adding students in bulk
 ##### Course enrollment settings
-    - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
-    - Click on the **eye** enrolments to open the **eye** icon
+    - TABLE: 
+        - **ks_enrol**
+        - **ks_user_enrolments**
+        
+    - HOW ENROL WORK:
+      - When you create a new course, Moodle will create 3 **Enrol Instance** (Enrol instance is the one record in the ks_enrol table)
+        in the ks_enrol table
+      - When an User **Join** into a course, Moodle will create a record in **ks_user_enrolments** to mark the enrolment of an user.
     
-    Method 2:
+    -  Method 1:
+      - **[In a course]** > **[Setting > Course administration > Users > Enrolment methods]**
+      - Click on the **eye** enrolments to open the **eye** icon
+    
+    - Method 2:
       - [In A course] -> [Select more setting] -> [click on tab Users] -> [click on Enrolment methods] -> in this page we can make [Self Enrollment Or add user to a course manual]
       - EX: http://localhost/moodle/enrol/instances.php?id=55
      
@@ -76,6 +86,7 @@
   - Bulk enrolments: Bulk enrolments allows you to enrol students and add them to groups in a Moodle course using an excel file containing the students' email address or userid
 
 ##### Unenrolment
+  - Remove a User out og the course.
   - https://docs.moodle.org/32/en/Unenrolment
 
 ### Moodle Activities, Resources, Blocks
