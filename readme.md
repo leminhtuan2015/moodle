@@ -9,8 +9,7 @@
 
 ### DATABASES
 ### Course -> Section -> Module (Resources + Activities of Course)
-
-
+### Forum
 
 ---------------------------------------------------------------------------------
 ### Moodle site - basic structure
@@ -194,4 +193,6 @@
 //      cm_info->content  = the content of module (content of lable)
 
 ```
-
+### Forum
+- By default when creating a new course => Moodle will automaticly create a default a forum (module).
+- ks_forum -> ks_forum_discussion -> ks_forum_posts
